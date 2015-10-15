@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property CLLocation *currentLocation;
 
 @end
 
@@ -40,7 +41,7 @@
 - (void)findZa:(CLLocation *)location
 {
     
-    NSLog(@"findZa called with location: %@", location);
+    //NSLog(@"findZa called with location: %@", location);
     
     // Create the search request
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
@@ -75,7 +76,7 @@
         
         
         //MKMapItem *mapItem = mapItems.firstObject;
-        NSLog(@"The Pizza Array looks like: %@", self.pizzariaArray);
+        //NSLog(@"The Pizza Array looks like: %@", self.pizzariaArray);
     }];
     
     
@@ -86,7 +87,10 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *location = [locations firstObject];
     if (location.verticalAccuracy < 1000 && location.horizontalAccuracy < 1000) {
+        
+        self.currentLocation = location;
         [self findZa:location];
+        
         [self.locationManager stopUpdatingLocation];
     }
     
@@ -100,16 +104,25 @@
     
     MKPizzaria *cellPizzaria = self.pizzariaArray[indexPath.row];
     
+    double dist = [cellPizzaria returnDistanceFromLocation:self.currentLocation];
+    NSLog(@"%f", dist);
+    
     cell.textLabel.text = cellPizzaria.name;
-    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%g", [cellPizzaria returnDistanceFromLocation:[MKMapItem mapItemForCurrentLocation]]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.02f km", dist/1000];
     
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Count is:%lu", (unsigned long)self.pizzariaArray.count);
-    return self.pizzariaArray.count;
+    if (self.pizzariaArray.count < 4)
+    {
+        return self.pizzariaArray.count;
+    }
+    else
+    {
+        return 4;
+    }
 }
 
 @end

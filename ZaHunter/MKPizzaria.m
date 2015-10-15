@@ -25,7 +25,7 @@
     {
         self.name = mapItem.name;
         self.phoneNumber = mapItem.phoneNumber;
-        //self.locationDistance =
+        self.pizzariaLocation = [[CLLocation alloc] initWithLatitude:mapItem.placemark.coordinate.latitude longitude:mapItem.placemark.coordinate.longitude];
     }
     
     return self;
@@ -37,12 +37,12 @@
     return [NSString stringWithFormat:@"%@:%@", self.name, self.phoneNumber];
 
 }
-//
-//- (double)returnDistanceFromLocation:(MKMapItem *)currentLocation
-//{
-//    
-//    return [self :currentLocation];
-//    
-//}
+
+- (double)returnDistanceFromLocation:(CLLocation *)currentLocation
+{
+    
+    return [self.pizzariaLocation distanceFromLocation:currentLocation];
+    
+}
 
 @end
