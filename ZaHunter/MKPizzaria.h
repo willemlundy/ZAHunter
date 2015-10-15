@@ -10,4 +10,10 @@
 
 @interface MKPizzaria : MKMapItem
 
+//@property CLLocationDistance *locationDistance;
+
+- (instancetype)initWithMKMapItem:(MKMapItem *)mapItem;
+
+- (double)returnDistanceFromLocation:(MKMapItem *)currentLocation;
+
 @end

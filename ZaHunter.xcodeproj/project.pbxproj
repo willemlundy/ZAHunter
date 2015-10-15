@@ -15,6 +15,8 @@
 		78D4DD561BCEF5AB000D3069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D4DD541BCEF5AB000D3069 /* LaunchScreen.storyboard */; };
 		78D4DD611BCEF5AB000D3069 /* ZaHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4DD601BCEF5AB000D3069 /* ZaHunterTests.m */; };
 		78D4DD6C1BCEF5AB000D3069 /* ZaHunterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4DD6B1BCEF5AB000D3069 /* ZaHunterUITests.m */; };
+		89E71C2F1BCF0AE6006AD69E /* Pizzarias.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E71C2E1BCF0AE6006AD69E /* Pizzarias.m */; settings = {ASSET_TAGS = (); }; };
+		89E71C341BCF1562006AD69E /* MKPizzaria.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E71C331BCF1562006AD69E /* MKPizzaria.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		78D4DD671BCEF5AB000D3069 /* ZaHunterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaHunterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D4DD6B1BCEF5AB000D3069 /* ZaHunterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZaHunterUITests.m; sourceTree = "<group>"; };
 		78D4DD6D1BCEF5AB000D3069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E71C2D1BCF0AE6006AD69E /* Pizzarias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pizzarias.h; sourceTree = "<group>"; };
+		89E71C2E1BCF0AE6006AD69E /* Pizzarias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pizzarias.m; sourceTree = "<group>"; };
+		89E71C321BCF1562006AD69E /* MKPizzaria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPizzaria.h; sourceTree = "<group>"; };
+		89E71C331BCF1562006AD69E /* MKPizzaria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPizzaria.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +107,9 @@
 		78D4DD451BCEF5AB000D3069 /* ZaHunter */ = {
 			isa = PBXGroup;
 			children = (
-				78D4DD491BCEF5AB000D3069 /* AppDelegate.h */,
-				78D4DD4A1BCEF5AB000D3069 /* AppDelegate.m */,
-				78D4DD4C1BCEF5AB000D3069 /* ViewController.h */,
-				78D4DD4D1BCEF5AB000D3069 /* ViewController.m */,
 				78D4DD4F1BCEF5AB000D3069 /* Main.storyboard */,
-				78D4DD521BCEF5AB000D3069 /* Assets.xcassets */,
-				78D4DD541BCEF5AB000D3069 /* LaunchScreen.storyboard */,
-				78D4DD571BCEF5AB000D3069 /* Info.plist */,
+				89E71C311BCF0B00006AD69E /* Models */,
+				89E71C301BCF0AF4006AD69E /* ViewControllers */,
 				78D4DD461BCEF5AB000D3069 /* Supporting Files */,
 			);
 			path = ZaHunter;
@@ -117,6 +118,11 @@
 		78D4DD461BCEF5AB000D3069 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				78D4DD521BCEF5AB000D3069 /* Assets.xcassets */,
+				78D4DD541BCEF5AB000D3069 /* LaunchScreen.storyboard */,
+				78D4DD571BCEF5AB000D3069 /* Info.plist */,
+				78D4DD491BCEF5AB000D3069 /* AppDelegate.h */,
+				78D4DD4A1BCEF5AB000D3069 /* AppDelegate.m */,
 				78D4DD471BCEF5AB000D3069 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +144,26 @@
 				78D4DD6D1BCEF5AB000D3069 /* Info.plist */,
 			);
 			path = ZaHunterUITests;
+			sourceTree = "<group>";
+		};
+		89E71C301BCF0AF4006AD69E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				78D4DD4C1BCEF5AB000D3069 /* ViewController.h */,
+				78D4DD4D1BCEF5AB000D3069 /* ViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		89E71C311BCF0B00006AD69E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89E71C321BCF1562006AD69E /* MKPizzaria.h */,
+				89E71C331BCF1562006AD69E /* MKPizzaria.m */,
+				89E71C2D1BCF0AE6006AD69E /* Pizzarias.h */,
+				89E71C2E1BCF0AE6006AD69E /* Pizzarias.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +299,8 @@
 				78D4DD4E1BCEF5AB000D3069 /* ViewController.m in Sources */,
 				78D4DD4B1BCEF5AB000D3069 /* AppDelegate.m in Sources */,
 				78D4DD481BCEF5AB000D3069 /* main.m in Sources */,
+				89E71C341BCF1562006AD69E /* MKPizzaria.m in Sources */,
+				89E71C2F1BCF0AE6006AD69E /* Pizzarias.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +524,7 @@
 				78D4DD721BCEF5AB000D3069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78D4DD731BCEF5AB000D3069 /* Build configuration list for PBXNativeTarget "ZaHunterTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +533,7 @@
 				78D4DD751BCEF5AB000D3069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78D4DD761BCEF5AB000D3069 /* Build configuration list for PBXNativeTarget "ZaHunterUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +542,7 @@
 				78D4DD781BCEF5AB000D3069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

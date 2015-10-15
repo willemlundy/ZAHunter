@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+// @class CoreLocation;
+#import <CoreLocation/CoreLocation.h>
 
 @interface Pizzarias : NSObject
+
+@property NSString *pizzariaName;
+@property NSString *pizzariaAddress;
+@property CLLocationCoordinate2D *pizzariaCoordinate;
+
+- (instancetype)initWithName:(NSString *)pizzariaName andWithAddress:(NSString *)pizzariaAddress pizzariaCoordinate:(CLLocationCoordinate2D *)pizzariaCoordinate;
 
 @end
