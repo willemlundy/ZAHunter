@@ -26,6 +26,13 @@
         self.name = mapItem.name;
         self.phoneNumber = mapItem.phoneNumber;
         self.pizzariaLocation = [[CLLocation alloc] initWithLatitude:mapItem.placemark.coordinate.latitude longitude:mapItem.placemark.coordinate.longitude];
+        self.pizzariaPoint = [[MKPointAnnotation alloc] init];
+        self.pizzariaPoint.coordinate = self.coordinate;
+        self.pizzariaPoint.title = mapItem.name;
+        
+        
+        
+        
     }
     
     return self;

@@ -55,16 +55,18 @@
         for (MKMapItem *item in mapItems)
         {
             // Create a pizzaria object for each map item
-            MKPizzaria *pizzeria = [[MKPizzaria alloc] initWithMKMapItem:item];
+            MKPizzaria *pizzaria = [[MKPizzaria alloc] initWithMKMapItem:item];
             
-            NSLog(@"Created MKPizzria :%@", pizzeria);
+            NSLog(@"Created MKPizzria :%@", pizzaria);
             
             // Add it to the pizzariaArray
-            [self.pizzariaArray addObject:pizzeria];
+            [self.pizzariaArray addObject:pizzaria];
             
             
             dispatch_async(dispatch_get_main_queue(), ^{
-    
+                
+                [self.mapView addAnnotation:pizzaria.pizzariaPoint];
+                
                 [self.mapView reloadInputViews];
                 [self.tableView reloadData];
                 

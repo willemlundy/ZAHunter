@@ -11,6 +11,8 @@
 @interface MKPizzaria : MKMapItem
 
 @property CLLocation *pizzariaLocation;
+@property MKPointAnnotation *pizzariaPoint;
+@property(nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 - (instancetype)initWithMKMapItem:(MKMapItem *)mapItem;
 
